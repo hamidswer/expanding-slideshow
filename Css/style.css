@@ -1,0 +1,275 @@
+/* ===============================Upper Level=========================== */
+* {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  font-weight: 200;
+}
+
+body {
+  margin: 10vh 10vw;
+}
+
+/* ===================================================================== */
+/* ===============================Font/Text============================= */
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../Fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+.pre-active>h1 {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: "Poppins-SemiBold";
+  font-size: 4rem;
+  color: #ffffff;
+  -webkit-text-stroke: 1px black;
+}
+
+.active>h1 {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: "Poppins-SemiBold";
+  font-size: 4rem;
+  color: #ffffff;
+  -webkit-text-stroke: 1px black;
+}
+
+/* ===================================================================== */
+/* ===============================Icons================================= */
+.social-media-icons {
+  max-width: 3.75rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+}
+
+/* ===================================================================== */
+/* =============================Image=================================== */
+.center-grid {
+  display: grid;
+  grid-template-columns: 80vw;
+}
+
+.center-child {
+  grid-column: 2/-2;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: center;
+}
+
+.image-span {
+  display: inline-block;
+  position: relative;
+  height: 40rem;
+  width: 10rem;
+  border-radius: 4rem;
+  margin: 0rem 0.5rem;
+  overflow: hidden;
+}
+
+.images {
+  height: 40rem;
+  width: auto;
+}
+
+.pre-active {
+  width: auto;
+}
+
+.active {
+  animation: transform-image 2s forwards;
+}
+
+.active>h1 {
+  animation: opacity-text 2s forwards;
+}
+
+.deactive {
+  animation: transform-image-back 2s forwards;
+}
+
+/* ===================================================================== */
+/* =============================Animation=============================== */
+
+@keyframes transform-image {
+  from {
+    width: 10rem;
+  }
+
+  to {
+    width: 60rem;
+  }
+}
+
+@keyframes opacity-text {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes transform-image-back {
+  from {
+    width: 60rem;
+  }
+
+  to {
+    width: 10rem;
+  }
+}
+
+/* ===================================================================== */
+/* ===============================Background============================ */
+
+.first-background {
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+
+}
+
+/* ===================================================================== */
+/* ===============================Grid================================== */
+.full-width {
+  grid-column: 1/-1;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.block {
+  display: block !important;
+}
+
+/* ===================================================================== */
+/* =============================Responsive============================== */
+@media only screen and (max-device-width: 2100px) and (orientation: portrait) {
+
+  .center-child {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    justify-items: center;
+  }
+
+  .image-span {
+    display: grid;
+    grid-row: 2/3;
+    grid-column: span 3;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 6rem;
+  }
+
+  .image-span .images {
+    height: 10rem;
+    width: auto;
+  }
+
+  .deactive {
+    animation: none;
+  }
+
+  .center-child .pre-active,
+  .center-child .active {
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 2/-2;
+    height: 40rem;
+    width: auto;
+
+  }
+
+  .center-child .pre-active .images,
+  .center-child .active .images {
+    height: 40rem;
+    width: auto;
+  }
+}
+
+@media only screen and (max-device-width: 2100px) and (orientation: landscape) {
+  .center-grid {
+    margin-top: 1rem;
+  }
+
+  .center-child {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    justify-items: center;
+  }
+
+  .image-span {
+    display: grid;
+    grid-row: 2/3;
+    grid-column: span 3;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 6rem;
+  }
+
+  .image-span .images {
+    height: 8rem;
+    width: auto;
+  }
+
+  .deactive {
+    animation: none;
+  }
+
+  .center-child .pre-active,
+  .center-child .active {
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 2/-2;
+    width: 30rem;
+    height: auto;
+  }
+
+  .center-child .pre-active .images,
+  .center-child .active .images {
+    width: 30rem;
+    height: auto;
+  }
+
+  .pre-active>h1 {
+    font-size: 2rem;
+    bottom: 1rem;
+  }
+
+  .active>h1 {
+    font-size: 2rem;
+    bottom: 1rem;
+  }
+
+  @keyframes transform-image {
+    from {
+      width: 10rem;
+    }
+
+    to {
+      width: 30rem;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 820px) and (orientation: landscape) {
+  .image-span {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .image-span .images {
+    height: 6rem;
+  }
+
+  .row-7 {
+    margin-top: 7rem;
+  }
+}
